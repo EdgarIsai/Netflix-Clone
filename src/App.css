@@ -1,21 +1,22 @@
 * {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 html {
-    font-size: 62.5%;
+	font-size: 62.5%;
 }
 
 h1 {
-    font-size: 4rem;
+	font-size: 4rem;
 }
 
 h2 {
-    font-size: 2rem;
-    font-weight: 500;
+	font-size: 2rem;
+	font-weight: 500;
 }
 
 .App {
-    background-color: #141414;
+	background-color: #141414;
 }

@@ -40,6 +40,13 @@ const Row = ({ title, fetchUrl, classStyle, isLargeRow }) => {
 		}
 	};
 
+	const trailer = (() => {
+		if (trailerUrl === "") {
+			return null;
+		}
+		return <Youtube videoId={trailerUrl} opts={opts} />;
+	})();
+
 	return (
 		<div className={classStyle.row}>
 			{/* title */}
@@ -54,12 +61,12 @@ const Row = ({ title, fetchUrl, classStyle, isLargeRow }) => {
 						src={`${base_url}${
 							isLargeRow ? movie.poster_path : movie.backdrop_path
 						}`}
-						onClick={() => trailerClickHandler(movie)}
+						onClick={trailerClickHandler.bind(this, movie)}
 						alt={movie.name}
 					/>
 				))}
 			</div>
-			{trailerUrl && <Youtube videoId={trailerUrl} opts={opts} />}
+			{trailer}
 		</div>
 	);
 };
